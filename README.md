@@ -14,4 +14,4 @@ A particle simulat within an electric field, made entirely with HTML, CSS and JS
 
 <kbd>Enter</kbd> Open / Close the property panel
 
-<kbd>Right-click</kbd> Spawn a point charge
+<kbd>Left-click</kbd> Spawn a point charge
