@@ -77,14 +77,14 @@ function updateData(){
 		document.getElementById('stats').childNodes.forEach((n) => {
 			let p = n.parentParticle;
 			n.innerHTML = `
-					Particula numero ${p.id}<br>
-					Es estática: ${p.isStatic ? "sí" : "no"} <br>
-					Carga: ${p.q} <br>
-					Posición <br>
+					Particle no. ${p.id}<br>
+					Is static: ${p.isStatic ? "sí" : "no"} <br>
+					Charge: ${p.q} <br>
+					Position <br>
 					X: ${p.pos.x.toFixed(3)} <br>
 					Y: ${p.pos.y.toFixed(3)} <br>
-					${!p.isStatic ? `Velocidad<br> X: ${p.spd.x.toFixed(3)} <br> Y: ${p.spd.y.toFixed(3)} <br>` : ``}
-					<input type = 'button' class = 'isDead' value = 'Borrar' onclick = 'setParAtt(this,true)'>
+					${!p.isStatic ? `Velocity<br> X: ${p.spd.x.toFixed(3)} <br> Y: ${p.spd.y.toFixed(3)} <br>` : ``}
+					<input type = 'button' class = 'isDead' value = 'Delete' onclick = 'setParAtt(this,true)'>
 				`;
 		});
 	}
@@ -93,13 +93,13 @@ function setInfoDiv(pau){
 	if(pau){
 		particles.forEach((p) => {
 			p.infoDiv.innerHTML = `
-				Particula numero ${p.id}<br><br>
-				Estática <input type = 'checkbox' class = 'isStatic' onchange = setParAtt(this,this.checked) /><br>
-				Carga<br><input type ='range' class = 'q' step = '0.01' min = '-1' max = 1 value = ${p.q} oninput = setParAtt(this,this.value) /> <input type = 'text' class = 'q' value = ${p.q} onkeyup = setParAtt(this,this.value) /><br>
-				Posición X<br><input type = 'number' class = 'pos x' value = '${p.pos.x.toFixed(3)}' onkeyup = setParAtt(this,this.value) /><br>
-				Posición Y<br><input type = 'number' class = 'pos y' value = '${p.pos.y.toFixed(3)}' onkeyup = setParAtt(this,this.value) /><br>
-				<p class = 'spd'>Velocidad en X</p><br><input type = 'number' class = 'spd x' value = ${p.spd.x.toFixed(3)} onkeyup = setParAtt(this,this.value) /><br>
-				<p class = 'spd'>Velocidad en Y</p><br><input type = 'number' class = 'spd y' value = ${p.spd.y.toFixed(3)} onkeyup = setParAtt(this,this.value) /><br>
+				Particle no. ${p.id}<br><br>
+				Static <input type = 'checkbox' class = 'isStatic' onchange = setParAtt(this,this.checked) /><br>
+				Charge<br><input type ='range' class = 'q' step = '0.01' min = '-1' max = 1 value = ${p.q} oninput = setParAtt(this,this.value) /> <input type = 'text' class = 'q' value = ${p.q} onkeyup = setParAtt(this,this.value) /><br>
+				X Position<br><input type = 'number' class = 'pos x' value = '${p.pos.x.toFixed(3)}' onkeyup = setParAtt(this,this.value) /><br>
+				Y Position<br><input type = 'number' class = 'pos y' value = '${p.pos.y.toFixed(3)}' onkeyup = setParAtt(this,this.value) /><br>
+				<p class = 'spd'>X Velocity</p><br><input type = 'number' class = 'spd x' value = ${p.spd.x.toFixed(3)} onkeyup = setParAtt(this,this.value) /><br>
+				<p class = 'spd'>Y Velocity</p><br><input type = 'number' class = 'spd y' value = ${p.spd.y.toFixed(3)} onkeyup = setParAtt(this,this.value) /><br>
 				<input type = 'button' class = 'isDead' value = 'Borrar' onclick = 'setParAtt(this,true)'><br>
 			`;				
 		});
